@@ -19,7 +19,7 @@ class WeatherData(BaseModel):
 def predict(data: WeatherData):
     features = [data.temperature, data.humidity, data.wind_speed]
     prediction = model.predict([features])[0]
-    return {'predicted_rainfall': prediction}
+    return {'predicted_rainfall': prediction,'unit': 'mm'}
 
 if __name__ == '__main__':
     import uvicorn
