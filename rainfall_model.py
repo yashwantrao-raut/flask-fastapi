@@ -27,11 +27,16 @@ print("Model trained and saved.")
 fig, axs = plt.subplots(2, 2, figsize=(15, 15))
 
 # Plot each feature against the target
+features = {
+    1: "Temperature",
+    2: "Humidity",
+    3: "Wind Speed"
+}
 for i in range(3):
-    axs[i//2, i%2].scatter(X[:, i], y, alpha=0.5)
-    axs[i//2, i%2].set_xlabel(f'Feature {i+1}')
-    axs[i//2, i%2].set_ylabel('Rainfall')
-    axs[i//2, i%2].set_title(f'Feature {i+1} vs Rainfall')
+    axs[i // 2, i % 2].scatter(X[:, i], y, alpha=0.5)
+    axs[i // 2, i % 2].set_xlabel(f'Feature {i + 1}, {features[i + 1]}')
+    axs[i // 2, i % 2].set_ylabel('Rainfall')
+    axs[i // 2, i % 2].set_title(f'Feature {i + 1} vs Rainfall')
 
 # Plot predicted vs actual
 y_pred = model.predict(X)
