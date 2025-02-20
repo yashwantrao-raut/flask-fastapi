@@ -1,6 +1,6 @@
 flask
-fastapi
-uvicorn
+fastapi == 0.95.0
+uvicorn == 0.22.0
 scikit-learn
 joblib
 numpy

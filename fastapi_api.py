@@ -5,7 +5,9 @@ from pydantic import BaseModel
 import joblib
 import numpy as np
 
-app = FastAPI()
+app = FastAPI(
+    title="My Awesome API", description="A simple example API with Swagger", version="1.0"
+)
 
 # Load the model
 model = joblib.load('rainfall_model.joblib')
@@ -23,4 +25,4 @@ def predict(data: WeatherData):
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app, host='0.0.0.0', port=6000)
+    uvicorn.run(app, host='0.0.0.0', port=5500)
